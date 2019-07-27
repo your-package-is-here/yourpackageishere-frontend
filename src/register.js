@@ -1,52 +1,98 @@
 import React, { Component, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
+import api from './helpers/environment.js';
 
 class Register extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: '',
+      password: '',
+      email: '',
+      buildingName: '',
+      streetAddress: '',
+      city: '',
+      state: '',
+      zip: '',
+      successRedirect: false
+    }
+    this.api = api();
+  }
+
+  handleInputChange = (event) => {
+    const target = event.target;
+    const inputName = target.name;
+    const inputValue = target.value;
+
+    this.setState({
+      [inputName]: inputValue
+    });
+  }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    return fetch(`${this.api}/buildingcreate`, {
+      method: 'POST',
+      body: JSON.stringify(this.state)
+    })
+      .then(response => {
+        console.log('response', response.json());
+        this.setState({successRedirect: true});
+      })
+      .catch(err => console.error());
+  }
 
   render() {
+    if (this.state.successRedirect === true) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <Fragment>
         <h3 className="text-center">Register Account</h3>
 
-        <form method="POST" action="/buildingcreate">
+        <form onSubmit={this.handleFormSubmit}>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="username">Username</label>
-              <input name="username" id="username" className="form-control" />
+              <input name="username" id="username" className="form-control" onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-6">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" id="password" className="form-control" />
+              <input type="password" name="password" id="password" className="form-control" onChange={this.handleInputChange} />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" className="form-control" />
+              <input type="email" name="email" id="email" className="form-control" onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-6">
               <label htmlFor="name">Building Name</label>
-              <input name="name" id="name" className="form-control" />
+              <input name="name" id="name" className="form-control" onChange={this.handleInputChange} />
             </div>
           </div>
           <div className="form-group">
             <label htmlFor="streetaddress">Street Address</label>
-            <input name="streetaddress" id="streetaddress" className="form-control" />
+            <input name="streetaddress" id="streetaddress" className="form-control" onChange={this.handleInputChange} />
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="city">City</label>
-              <input name="city" id="city" className="form-control" />
+              <input name="city" id="city" className="form-control" onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-4">
               <label htmlFor="state">State</label>
-              <input name="state" id="state" className="form-control" />
+              <input name="state" id="state" className="form-control" onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-2">
               <label htmlFor="zip">Zip Code</label>
-              <input name="zip" id="zip" className="form-control" />
+              <input name="zip" id="zip" className="form-control" onChange={this.handleInputChange} />
             </div>
           </div>
-          <button type="submit" className="btn btn-primary">Register </button>
+          <button type="submit" className="btn btn-primary">Register</button>
         </form>
       </Fragment>
     )
