@@ -24,7 +24,7 @@ class Login extends Component {
   }
 
   handleFormSubmit = (event) => {
-    
+
   }
 
   render() {
@@ -47,3 +47,5 @@ class Login extends Component {
     )
   }
 }
+
+export default Login;
