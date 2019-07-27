@@ -30,7 +30,7 @@ class Login extends Component {
   render() {
     return (
       <Fragment>
-        <form className="form-signin" onSubmit={}>
+        <form className="form-signin">
           <i className="fas fa-parachute-box mb-4"></i>
           <h3 className="text-center">Please log in</h3>
           <div className="form-row login-input">
