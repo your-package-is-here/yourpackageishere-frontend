@@ -33,20 +33,27 @@ class Register extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    return fetch(`${this.api}/buildingcreate`, {
+    return fetch(`${this.api}/api/auth/signup`, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(this.state)
     })
       .then(response => {
-        console.log('response', response.json());
-        this.setState({successRedirect: true});
+        if (response.ok) {
+          this.setState({successRedirect: true});
+        }
+        else {
+          console.log(response.json());
+        }
       })
       .catch(err => console.error());
   }
 
   render() {
     if (this.state.successRedirect === true) {
-      return <Redirect to="/" />;
+      return <Redirect to="/login" />;
     }
 
     return (
