@@ -11,6 +11,7 @@ const home = () => (
         <p>Join <span className="special">now</span> to start using!</p>
         <a className="btn btn-dark btn-xl" href="/register">Sign up</a>
         <a className="btn btn-dark btn-xl" href="/login">Login</a>
+        <a className="btn btn-dark btn-xl" href="/about">About</a>
       </span>
 
   </div>
