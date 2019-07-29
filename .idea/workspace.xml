@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eadc8980-bd03-4ec5-a3bd-6d5ce298737c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="eadc8980-bd03-4ec5-a3bd-6d5ce298737c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,16 +13,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="352">
-                <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <first_editor relative-caret-position="-308">
+                <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -36,6 +39,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/yourpackageishere-frontend.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -96,6 +108,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -103,10 +116,10 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3287858" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -129,12 +142,15 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="352">
-            <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <first_editor relative-caret-position="-308">
+            <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
