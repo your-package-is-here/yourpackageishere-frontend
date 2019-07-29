@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/codefellows/401/Mid-Term-Project/pawpals" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/Taskmaster" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/TaskmasterLab" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/bitmap-transformer" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/codefellowship" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/java-fundamentals/basiclibrary" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/java-fundamentals/inheritance" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/java-fundamentals/linter" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/repeatedword_AWS_API_Gateway" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/songr" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/sqsLab" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/401/taskmaster" value="PREVIEW" />
+        <entry key="$USER_HOME$/codefellows/data-structures-and-algorithms/code-challenges/Java" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+</project>
