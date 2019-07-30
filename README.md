@@ -1,5 +1,8 @@
 # yourpackageishere.com
 
+## Running
+Reference the [Create React App instructions](./cra-readme.md)
+
 ## Client-side Routes
 ** Open **
 - Index
@@ -7,7 +10,7 @@
 - Login
 - About Us
 
-** Closed **
+** Private **
 - Send Email (Scan & Email)
 - All Tenants (tenant/all)
 - Edit Tenant (tenant/{id})
