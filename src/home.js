@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const home = () => (
   <div id="landing-page">
@@ -9,9 +10,9 @@ const home = () => (
       {/* If not logged in: */}
       <span>
         <p>Join <span className="special">now</span> to start using!</p>
-        <a className="btn btn-dark btn-xl" href="/register">Sign up</a>
-        <a className="btn btn-dark btn-xl" href="/login">Login</a>
-        <a className="btn btn-dark btn-xl" href="/about">About</a>
+        <Link className="btn btn-dark btn-xl" to="/register">Sign up</Link>
+        <Link className="btn btn-dark btn-xl" to="/login">Login</Link>
+        <Link className="btn btn-dark btn-xl" to="/about">About</Link>
       </span>
 
   </div>
