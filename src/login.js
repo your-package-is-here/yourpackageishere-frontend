@@ -44,6 +44,7 @@ class Login extends Component {
       })
       .then(data => {
         localStorage.setItem('token', data.accessToken);
+        this.props.onLogin();
         this.setState({successRedirect: true});
       })
       .catch(err => console.error());

@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { Route, withRouter, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from './home.js';
 import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
 import api from './helpers/environment.js';
+import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +40,10 @@ class App extends Component {
     }
   }
 
+  handleLogin = () => {
+    this.loadCurrentUser();
+  }
+
   componentDidMount = () => {
     this.loadCurrentUser();
   }
@@ -49,10 +54,12 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/about" 
-            component={About} 
+          <Route exact path="/login"
+            render={(props) => <Login onLogin={this.handleLogin} {...props} />}
+          />
+          <PrivateRoute exact path="/about" 
             isAuthenticated={this.state.isAuthenticated} 
+            component={About} 
           />
         </Switch>
       </Fragment>
@@ -60,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
