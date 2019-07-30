@@ -1,11 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { Fragment } from 'react';
 
 export default (props) => {
-  if (props.isAuthenticated === false) {
-    return <Redirect to="/" />;
-  }
-
   return (
     <Fragment>
       What up?
