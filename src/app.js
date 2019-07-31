@@ -5,8 +5,8 @@ import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
 import api from './helpers/environment.js';
-import AllTen from './allTen.js'
-import AddTen from './addTen.js'
+import AllTen from './allTenants.js'
+import AddTen from './addTenant.js'
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
