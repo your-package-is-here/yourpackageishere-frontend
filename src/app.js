@@ -5,6 +5,7 @@ import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
 import api from './helpers/environment.js';
+import AllTen from './allTen.js'
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
@@ -61,7 +62,11 @@ class App extends Component {
             isAuthenticated={this.state.isAuthenticated} 
             component={About} 
           />
-        </Switch>
+             <PrivateRoute exact path="/allTen"
+                      isAuthenticated={this.state.isAuthenticated}
+                      component={AllTen}
+                    />
+           </Switch>
       </Fragment>
     );
   }
