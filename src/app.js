@@ -36,9 +36,9 @@ class App extends Component {
           return response.json();
         })
         .then(user => {
-          this.setState({currentUser: user, isAuthenticated: true});
+          this.setState({ currentUser: user, isAuthenticated: true });
         })
-        .catch(err => console.error());
+        .catch(err => console.error(err));
     }
   }
 
@@ -59,21 +59,21 @@ class App extends Component {
           <Route exact path="/login"
             render={(props) => <Login onLogin={this.handleLogin} {...props} />}
           />
-          <PrivateRoute exact path="/about" 
-            isAuthenticated={this.state.isAuthenticated} 
-            component={About} 
+          <PrivateRoute exact path="/about"
+            isAuthenticated={this.state.isAuthenticated}
+            component={About}
           />
 
-          <PrivateRoute exact path="/allTen"
-                  isAuthenticated={this.state.isAuthenticated}
-                  component={AllTen}
-                />
+          <PrivateRoute exact path="/all-tenants"
+            isAuthenticated={this.state.isAuthenticated}
+            component={AllTen}
+          />
 
-          <PrivateRoute exact path="/addTen"
+          <PrivateRoute exact path="/add-tenant"
             isAuthenticated={this.state.isAuthenticated}
             component={AddTen}
           />
-           </Switch>
+        </Switch>
       </Fragment>
     );
   }
