@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 class EditTenant extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       firstname: '',
       lastname: '',
@@ -15,11 +16,10 @@ class EditTenant extends Component {
       successRedirect: false,
     }
     this.api = api();
+    this.id = this.props.match.params.id;
   }
   
-  componentDidMount = () => {
-    console.log(this.props.match.params.id);
-    return fetch(`${this.api}/api/tenant/${this.props.match.params.id}`, {
+  componentDidMount = () => {return fetch(`${this.api}/api/tenant/${this.id}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -29,13 +29,7 @@ class EditTenant extends Component {
       return response.json();
     })
     .then(tenants => {
-      console.log(tenants);
-      this.setState({firstname: tenants.firstname});
-      this.setState({lastname: tenants.lastname});
-      this.setState({email: tenants.email});
-      this.setState({aptnum: tenants.aptnum});
-      this.setState({phonenum: tenants.phonenum});
-      this.setState({id: this.props.match.params.id})
+      this.setState({ ...tenants });
     })
     .catch(err => console.error(err));
   }
@@ -53,7 +47,7 @@ class EditTenant extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     
-    return fetch(`${this.api}/api/tenant/${this.props.match.params.id}/edit`, {
+    return fetch(`${this.api}/api/tenant/${this.id}/edit`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -80,26 +74,26 @@ class EditTenant extends Component {
         <div className="form-row">
           <div className="form-group col-md-6">
             <label htmlFor="firstname">first name</label>
-            <input name="firstname" id="firstname" className="form-control" value = {this.state.firstname} onChange={this.handleInputChange} />
+            <input name="firstname" id="firstname" className="form-control" value={this.state.firstname} onChange={this.handleInputChange} />
           </div>
           <div className="form-group col-md-6">
             <label htmlFor="lastname">lastname</label>
-            <input type="lastname" name="lastname" id="lastname" className="form-control" value = {this.state.lastname} onChange={this.handleInputChange} />
+            <input type="lastname" name="lastname" id="lastname" className="form-control" value={this.state.lastname} onChange={this.handleInputChange} />
           </div>
         </div>
         <div className="form-row">
           <div className="form-group col-md-6">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" className="form-control" value = {this.state.email} onChange={this.handleInputChange} />
+            <input type="email" name="email" id="email" className="form-control" value={this.state.email} onChange={this.handleInputChange} />
           </div>
           <div className="form-group col-md-6">
             <label htmlFor="aptnum">aptnum</label>
-            <input name="aptnum" id="aptnum" className="form-control" value = {this.state.aptnum} onChange={this.handleInputChange} />
+            <input name="aptnum" id="aptnum" className="form-control" value={this.state.aptnum} onChange={this.handleInputChange} />
           </div>
         </div>
         <div className="form-group col-md-6">
           <label htmlFor="phonenum">Phonenum</label>
-          <input name="phonenum" id="phonenum" className="form-control" value = {this.state.phonenum}onChange={this.handleInputChange} />
+          <input name="phonenum" id="phonenum" className="form-control" value={this.state.phonenum}onChange={this.handleInputChange} />
         </div>
         <button type="submit" className="btn btn-primary">Edit</button>
       </form>
