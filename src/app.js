@@ -60,11 +60,9 @@ class App extends Component {
           <Route exact path="/login"
             render={(props) => <Login onLogin={this.handleLogin} {...props} />}
           />
-          <PrivateRoute exact path="/about"
-            isAuthenticated={this.state.isAuthenticated}
-            component={About}
-          />
+          <Route exact path="/about" component={About} />
 
+          {/* Private Routes (require auth) */}
           <PrivateRoute exact path="/all-tenants"
             isAuthenticated={this.state.isAuthenticated}
             component={AllTen}
