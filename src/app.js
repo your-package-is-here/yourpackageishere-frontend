@@ -7,6 +7,7 @@ import About from './about.js';
 import api from './helpers/environment.js';
 import AllTen from './allTenants.js'
 import AddTen from './addTenant.js'
+import EditTenant from './editTenant.js';
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
@@ -72,6 +73,11 @@ class App extends Component {
           <PrivateRoute exact path="/add-tenant"
             isAuthenticated={this.state.isAuthenticated}
             component={AddTen}
+          />
+
+          <PrivateRoute path="/edit-tenant/:id"
+            isAuthenticated={this.state.isAuthenticated}
+            component={EditTenant}
           />
         </Switch>
       </Fragment>
