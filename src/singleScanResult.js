@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default (props) => {
-  console.log(props);
-
   return (
     <div className="card">
       <div className="card-body">
