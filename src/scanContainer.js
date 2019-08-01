@@ -61,17 +61,15 @@ class ScanContainer extends Component {
           </div>
           <hr />
           <h2>Send</h2>
-          <div className="row">
-            {scans.length > 0 ?
-              scans.map(scan => 
-                <SingleScanResult 
-                  key={scan.trackingNumber} 
-                  scan={scan}
-                />
-              ) :
-              null
-            }
-          </div>
+          {scans.length > 0 ?
+            scans.map(scan => 
+              <SingleScanResult 
+                key={scan.trackingNumber} 
+                scan={scan}
+              />
+            ) :
+            null
+          }
         </div>
       </Fragment>
     )

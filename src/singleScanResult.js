@@ -61,43 +61,45 @@ class SingleScanResult extends Component {
 
     let scanSendAction;
 
-    this.state.response ? 
+    this.state.response ?
       scanSendAction = (
         <h2>{this.state.response.message}</h2>
-      ): 
+      ) :
       scanSendAction = <button type="button" className="btn btn-primary" onClick={this.handleSend}>Send Notification</button>
-    ;
+      ;
 
     return (
       <Fragment>
-        <div className="col">
-          <div className="card">
-            <div className="card-body">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="trackingNumber">Tracking Number</label>
-                  <input type="text" className="form-control" name="trackingNumber" id="trackingNumber" placeholder="Tracking Number" defaultValue={this.props.scan.trackingNumber} onChange={this.handleInputChange} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="aptNum">Apartment Number</label>
-                  <input type="text" className="form-control" name="aptNum" id="aptNum" placeholder="Apartment Number" defaultValue={this.props.scan.aptNum} onChange={this.handleInputChange} />
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" className="form-control" name="firstName" id="firstName" placeholder="First Name" defaultValue={this.props.scan.firstName} onChange={this.handleInputChange} />
+        <div className="row">
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="trackingNumber">Tracking Number</label>
+                    <input type="text" className="form-control" name="trackingNumber" id="trackingNumber" placeholder="Tracking Number" defaultValue={this.props.scan.trackingNumber} onChange={this.handleInputChange} />
                   </div>
-                  <div className="col">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" className="form-control" name="lastName" id="lastName" placeholder="Last Name" defaultValue={this.props.scan.lastName} onChange={this.handleInputChange} />
+                  <div className="form-group">
+                    <label htmlFor="aptNum">Apartment Number</label>
+                    <input type="text" className="form-control" name="aptNum" id="aptNum" placeholder="Apartment Number" defaultValue={this.props.scan.aptNum} onChange={this.handleInputChange} />
                   </div>
-                </div>
-              </form>
+                  <div className="row">
+                    <div className="col">
+                      <label htmlFor="firstName">First Name</label>
+                      <input type="text" className="form-control" name="firstName" id="firstName" placeholder="First Name" defaultValue={this.props.scan.firstName} onChange={this.handleInputChange} />
+                    </div>
+                    <div className="col">
+                      <label htmlFor="lastName">Last Name</label>
+                      <input type="text" className="form-control" name="lastName" id="lastName" placeholder="Last Name" defaultValue={this.props.scan.lastName} onChange={this.handleInputChange} />
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col">
-          {scanSendAction}
+          <div className="col">
+            {scanSendAction}
+          </div>
         </div>
       </Fragment>
     )
