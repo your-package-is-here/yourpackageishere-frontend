@@ -13,6 +13,14 @@ class ScanContainer extends Component {
     }
   }
 
+  handleQRScan = (result) => {
+    if (result) {
+      this.addToScanResult(result);
+    } else {
+      this.setState({scanStatus: 'fail'});
+    }
+  }
+
   addToScanResult = (result) => {
     const scans = this.state.scanResult;
     const thisResult = JSON.parse(result);
@@ -31,14 +39,6 @@ class ScanContainer extends Component {
       scanResult: [...this.state.scanResult, JSON.parse(result)],
       scanStatus: 'success'
     });
-  }
-
-  handleQRScan = (result) => {
-    if (result) {
-      this.addToScanResult(result);
-    } else {
-      this.setState({scanStatus: 'fail'});
-    }
   }
 
   render() {
@@ -64,7 +64,10 @@ class ScanContainer extends Component {
           <div className="row">
             {scans.length > 0 ?
               scans.map(scan => 
-                <SingleScanResult key={scan.trackingNumber} scan={scan} />
+                <SingleScanResult 
+                  key={scan.trackingNumber} 
+                  scan={scan}
+                />
               ) :
               null
             }
