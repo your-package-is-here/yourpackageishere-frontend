@@ -19,20 +19,19 @@ class ScanContainer extends Component {
         scanResult: result,
         scanStatus: 'success'
       });
+    } else {
+      this.setState({scanStatus: 'fail'});
     }
   }
 
   render() {
-
-    let scanStatusMessage;
-    this.state.scanStatus === 'success' ?
-      scanStatusMessage = <ScanMessage status={this.state.scanStatusMessage} /> :
-      scanStatusMessage = null;
-
     return (
       <Fragment>
         <Scanner handleQRScan={this.handleQRScan} />
-        {scanStatusMessage}
+        {this.state.scanResult ?
+          <ScanMessage status={this.state.scanStatus} /> :
+          null
+        }
       </Fragment>
     )
   }

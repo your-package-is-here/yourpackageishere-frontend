@@ -3,12 +3,6 @@ import QrReader from 'react-qr-reader';
 
 
 class Scanner extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    }
-  }
 
   handleScan = (data) => {
     if (data) {
@@ -29,7 +23,6 @@ class Scanner extends Component {
           onScan={this.handleScan}
           style={{ width: '250px' }}
         />
-        <p>{this.state.result}</p>
       </Fragment>
     )
   }
