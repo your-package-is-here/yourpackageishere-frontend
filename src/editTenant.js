@@ -53,7 +53,7 @@ class EditTenant extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     
-    return fetch(`${this.api}/api/tenant/edit?id=${this.props.match.params.id}`, {
+    return fetch(`${this.api}/api/tenant/${this.props.match.params.id}/edit`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
