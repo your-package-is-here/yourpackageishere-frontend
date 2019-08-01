@@ -8,6 +8,9 @@ import About from './about.js';
 import ScanContainer from './scanContainer';
 
 import api from './helpers/environment.js';
+import AllTen from './allTenants.js'
+import AddTen from './addTenant.js'
+import EditTenant from './editTenant.js';
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
@@ -37,9 +40,9 @@ class App extends Component {
           return response.json();
         })
         .then(user => {
-          this.setState({currentUser: user, isAuthenticated: true});
+          this.setState({ currentUser: user, isAuthenticated: true });
         })
-        .catch(err => console.error());
+        .catch(err => console.error(err));
     }
   }
 
@@ -60,9 +63,22 @@ class App extends Component {
           <Route exact path="/login"
             render={(props) => <Login onLogin={this.handleLogin} {...props} />}
           />
-          <PrivateRoute exact path="/about" 
-            isAuthenticated={this.state.isAuthenticated} 
-            component={About} 
+          <Route exact path="/about" component={About} />
+
+          {/* Private Routes (require auth) */}
+          <PrivateRoute exact path="/all-tenants"
+            isAuthenticated={this.state.isAuthenticated}
+            component={AllTen}
+          />
+
+          <PrivateRoute exact path="/add-tenant"
+            isAuthenticated={this.state.isAuthenticated}
+            component={AddTen}
+          />
+
+          <PrivateRoute path="/edit-tenant/:id"
+            isAuthenticated={this.state.isAuthenticated}
+            component={EditTenant}
           />
           <PrivateRoute exact path="/scan-package"
             isAuthenticated={this.state.isAuthenticated}
