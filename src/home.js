@@ -13,6 +13,7 @@ const home = () => (
         <Link className="btn btn-dark btn-xl" to="/register">Sign up</Link>
         <Link className="btn btn-dark btn-xl" to="/login">Login</Link>
         <Link className="btn btn-dark btn-xl" to="/about">About</Link>
+        <Link className="btn btn-dark btn-xl" to="/scan-package">Scan Package</Link>
         <Link className="btn btn-dark btn-xl" to="/all-tenants">All Tenants</Link>
         <Link className="btn btn-dark btn-xl" to="/add-tenant">Add Tenants</Link>
       </span>

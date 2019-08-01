@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
+
 import Home from './home.js';
 import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
+import ScanContainer from './scanContainer';
+
 import api from './helpers/environment.js';
 import AllTen from './allTenants.js'
 import AddTen from './addTenant.js'
@@ -76,6 +79,10 @@ class App extends Component {
           <PrivateRoute path="/edit-tenant/:id"
             isAuthenticated={this.state.isAuthenticated}
             component={EditTenant}
+          />
+          <PrivateRoute exact path="/scan-package"
+            isAuthenticated={this.state.isAuthenticated}
+            component={ScanContainer}
           />
         </Switch>
       </Fragment>
