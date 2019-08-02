@@ -57,7 +57,7 @@ class Login extends Component {
 
     return (
       <Fragment>
-        <div class="container mt" id="login">
+        <div className="container mt" id="login">
           <form className="form-signin" onSubmit={this.handleFormSubmit}>
             <i className="fas fa-parachute-box mb-4"></i>
             <h3 className="text-center">Please log in</h3>

@@ -42,9 +42,9 @@ class AllTen extends Component {
 
     return (
       <Fragment>
-        <div class="container mt" id="all-tenants">
-          <h3 class="text-center">Tenants</h3>
-          <table class="table">
+        <div className="container mt" id="all-tenants">
+          <h3 className="text-center">Tenants</h3>
+          <table className="table">
           <thead>
             <tr>
               <th scope="col">Apt. #</th>
@@ -61,7 +61,7 @@ class AllTen extends Component {
                   />
                 ))}
             </tbody>
-          <Link class="btn btn-primary" to="/add-tenant">Add Tenant</Link>
+          <Link className="btn btn-primary" to="/add-tenant">Add Tenant</Link>
           </table>
         </div>
       </Fragment>

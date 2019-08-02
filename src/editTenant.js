@@ -19,7 +19,8 @@ class EditTenant extends Component {
     this.id = this.props.match.params.id;
   }
   
-  componentDidMount = () => {return fetch(`${this.api}/api/tenant/${this.id}`, {
+  componentDidMount = () => {
+    return fetch(`${this.api}/api/tenant/${this.id}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -70,33 +71,35 @@ class EditTenant extends Component {
       return <Redirect to="/all-Tenants" />;
     }
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="firstname">first name</label>
-            <input name="firstname" id="firstname" className="form-control" value={this.state.firstname} onChange={this.handleInputChange} />
+      <div className="container mt">
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="firstname">first name</label>
+              <input name="firstname" id="firstname" className="form-control" value={this.state.firstname} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group col-md-6">
+              <label htmlFor="lastname">lastname</label>
+              <input type="lastname" name="lastname" id="lastname" className="form-control" value={this.state.lastname} onChange={this.handleInputChange} />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" className="form-control" value={this.state.email} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group col-md-6">
+              <label htmlFor="aptnum">aptnum</label>
+              <input name="aptnum" id="aptnum" className="form-control" value={this.state.aptnum} onChange={this.handleInputChange} />
+            </div>
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="lastname">lastname</label>
-            <input type="lastname" name="lastname" id="lastname" className="form-control" value={this.state.lastname} onChange={this.handleInputChange} />
+            <label htmlFor="phonenum">Phonenum</label>
+            <input name="phonenum" id="phonenum" className="form-control" value={this.state.phonenum}onChange={this.handleInputChange} />
           </div>
-        </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" className="form-control" value={this.state.email} onChange={this.handleInputChange} />
-          </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="aptnum">aptnum</label>
-            <input name="aptnum" id="aptnum" className="form-control" value={this.state.aptnum} onChange={this.handleInputChange} />
-          </div>
-        </div>
-        <div className="form-group col-md-6">
-          <label htmlFor="phonenum">Phonenum</label>
-          <input name="phonenum" id="phonenum" className="form-control" value={this.state.phonenum}onChange={this.handleInputChange} />
-        </div>
-        <button type="submit" className="btn btn-primary">Edit</button>
-      </form>
+          <button type="submit" className="btn btn-primary">Edit</button>
+        </form>
+      </div>
     )
   }
 }

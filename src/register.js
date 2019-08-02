@@ -58,7 +58,7 @@ class Register extends Component {
 
     return (
       <Fragment>
-        <div class="container mt" id="register">
+        <div className="container mt" id="register">
           <h3 className="text-center">Register Account</h3>
 
           <form onSubmit={this.handleFormSubmit}>
