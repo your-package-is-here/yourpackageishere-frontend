@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import Who from './who';
-import Header from './header.js';
 
 export default class About extends Component {
 
@@ -34,13 +33,12 @@ export default class About extends Component {
   render() {
     return (
       <Fragment>
-        {/* <Header isAuthenticated={this.props.isAuthenticated} /> */}
         <div className="about-us" id="about-us">
-          <h3 class="text-center">About Us</h3>
+          <h3 className="text-center">About Us</h3>
           
-          <div class="d-flex flex-row">
+          <div className="d-flex flex-row">
             
-            <div class="p-2">
+            <div className="p-2">
               <Who 
               name = {this.state.john.name}
               description = {this.state.john.description}
@@ -48,24 +46,24 @@ export default class About extends Component {
               />
             </div>
             
-            <div class="p-2">
-              <Who class="p-2"
+            <div className="p-2">
+              <Who className="p-2"
               name = {this.state.kush.name}
               description = {this.state.kush.description}
               image = {this.state.kush.image}
               />
             </div>
             
-            <div class="p-2">
-              <Who class="p-2"
+            <div className="p-2">
+              <Who className="p-2"
               name = {this.state.chai.name}
               description = {this.state.chai.description}
               image = {this.state.chai.image}
               />
             </div>
             
-            <div class="p-2">
-              <Who class="p-2"
+            <div className="p-2">
+              <Who className="p-2"
               name = {this.state.levi.name}
               description = {this.state.levi.description}
               image = {this.state.levi.image}

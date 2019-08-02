@@ -20,7 +20,8 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      isAuthenticated: false
+      isAuthenticated: false,
+      logout: false
     }
     this.api = api();
   }
@@ -51,14 +52,33 @@ class App extends Component {
     this.loadCurrentUser();
   }
 
+  handleLogout = (event) => {
+    localStorage.removeItem('token');
+    this.setState({
+      currentUser: null,
+      isAuthenticated: false,
+      logout: true
+    });
+  }
+
   componentDidMount = () => {
     this.loadCurrentUser();
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.logout !== this.state.logout) {
+      this.setState({logout: false});
+    }
   }
 
   render() {
     return (
       <Fragment>
-        <Header isAuthenticated={this.state.isAuthenticated} />
+        <Header 
+          isAuthenticated={this.state.isAuthenticated}
+          logout={this.state.logout}
+          handleLogout={this.handleLogout}
+        />
         <Switch>
           <Route exact path="/" 
             render={(props) => <Home isAuthenticated={this.state.isAuthenticated} {...props} />}
@@ -71,9 +91,6 @@ class App extends Component {
           />
 
           <Route exact path="/about" component={About} />
-          {/* <Route exact path="/about" 
-            render={(props) => <About isAuthenticated={this.state.isAuthenticated} {...props} />}
-          /> */}
 
           {/* Private Routes (require auth) */}
           <PrivateRoute exact path="/all-tenants"

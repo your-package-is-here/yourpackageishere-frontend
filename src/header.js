@@ -1,17 +1,22 @@
 import React, { Fragment } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faParachuteBox } from '@fortawesome/free-solid-svg-icons'
 
 export default (props) => {
 
+  if (props.logout) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container">
-          <a className="navbar-brand page-logo" href="/">
+          <Link className="navbar-brand page-logo" to="/">
               <FontAwesomeIcon icon={faParachuteBox} />
               YourPackageIsHere
-          </a>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
           </button>
@@ -25,37 +30,40 @@ export default (props) => {
                         Building
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="/sendemail">Scan Package</a>
-                        <a className="dropdown-item" href="/add-tenant">Add Tenant</a>
-                        <a className="dropdown-item" href="/all-tenants">All Tenants</a>
+                        <Link className="dropdown-item" to="/scan-package">Scan Package</Link>
+                        <Link className="dropdown-item" to="/add-tenant">Add Tenant</Link>
+                        <Link className="dropdown-item" to="/all-tenants">All Tenants</Link>
                     </div>
                   </li>
                 ) : 
                 (
                   <Fragment>
                     <li className="nav-item active">
-                      <a className="nav-link" href="/">Home
+                      <Link className="nav-link" to="/">Home
                           <span className="sr-only">(current)</span>
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/register">Register</a>
+                      <Link className="nav-link" to="/register">Register</Link>
                     </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="/login">Login</a>
+                        <Link className="nav-link" to="/login">Login</Link>
                       </li>
                   </Fragment>
                 )
               }
 
               <li className="nav-item">
-                <a className="nav-link" href="/about">About</a>
+                <Link className="nav-link" to="/about">About</Link>
               </li>
 
               {props.isAuthenticated ?
                 (
                   <li className="nav-item">
-                    <a className="nav-link" href="/logout">Logout</a>
+                    <button 
+                      className="nav-link"
+                      onClick={props.handleLogout}
+                    >Logout</button>
                   </li>
                 ) : 
                 null
