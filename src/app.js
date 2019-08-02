@@ -6,11 +6,12 @@ import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
 import ScanContainer from './scanContainer';
-
-import api from './helpers/environment.js';
 import AllTen from './allTenants.js'
 import AddTen from './addTenant.js'
 import EditTenant from './editTenant.js';
+import Header from './header.js';
+
+import api from './helpers/environment.js';
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Header isAuthenticated={this.state.isAuthenticated} />
         <Switch>
           <Route exact path="/" 
             render={(props) => <Home isAuthenticated={this.state.isAuthenticated} {...props} />}
