@@ -71,15 +71,16 @@ class EditTenant extends Component {
       return <Redirect to="/all-Tenants" />;
     }
     return (
-      <div className="container mt">
+      <div class="tenantEdit mt">
+        <h3 class="text-center">Edit Tenant</h3>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label htmlFor="firstname">first name</label>
+              <label htmlFor="firstname">First Name</label>
               <input name="firstname" id="firstname" className="form-control" value={this.state.firstname} onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="lastname">lastname</label>
+              <label htmlFor="lastname">Last Name</label>
               <input type="lastname" name="lastname" id="lastname" className="form-control" value={this.state.lastname} onChange={this.handleInputChange} />
             </div>
           </div>
@@ -89,13 +90,15 @@ class EditTenant extends Component {
               <input type="email" name="email" id="email" className="form-control" value={this.state.email} onChange={this.handleInputChange} />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="aptnum">aptnum</label>
+              <label htmlFor="aptnum">Apartment Number</label>
               <input name="aptnum" id="aptnum" className="form-control" value={this.state.aptnum} onChange={this.handleInputChange} />
             </div>
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="phonenum">Phonenum</label>
-            <input name="phonenum" id="phonenum" className="form-control" value={this.state.phonenum}onChange={this.handleInputChange} />
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="phonenum">Phone Number</label>
+              <input name="phonenum" id="phonenum" className="form-control" value={this.state.phonenum}onChange={this.handleInputChange} />
+            </div>
           </div>
           <button type="submit" className="btn btn-primary">Edit</button>
         </form>
