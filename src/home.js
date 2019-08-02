@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-const home = () => (
+const home = (props) => (
   <div id="landing-page">
     <div className="container" id="landing-content">
       <h2>Welcome to YourPackageIsHere</h2>
       <p>Making deliveries that much <span className="special">easier</span>.</p>
-
-      {/* If not logged in: */}
-      <span>
-        <p>Join <span className="special">now</span> to start using!</p>
-        <Link className="btn btn-dark btn-xl" to="/register">Sign up</Link>
-        <Link className="btn btn-dark btn-xl" to="/login">Login</Link>
-        <Link className="btn btn-dark btn-xl" to="/about">About</Link>
-        <Link className="btn btn-dark btn-xl" to="/scan-package">Scan Package</Link>
-        <Link className="btn btn-dark btn-xl" to="/all-tenants">All Tenants</Link>
-        <Link className="btn btn-dark btn-xl" to="/add-tenant">Add Tenants</Link>
-      </span>
-
+      {!props.isAuthenticated ? 
+        (
+          <Fragment>
+            <Link className="btn btn-dark" to="/register">Sign up</Link>
+            <Link className="btn btn-primary" to="/login">Login</Link>
+          </Fragment>
+        ) :
+        null
+      }
   </div>
 </div >
 );

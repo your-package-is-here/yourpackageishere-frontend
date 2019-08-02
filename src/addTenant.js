@@ -28,7 +28,7 @@ class AddTen extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    
+
     return fetch(`${this.api}/api/tenant/add`, {
       method: 'POST',
       headers: {
@@ -52,33 +52,40 @@ class AddTen extends Component {
       return <Redirect to="/all-tenants" />;
     }
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="firstname">first name</label>
-            <input name="firstname" id="firstname" className="form-control" onChange={this.handleInputChange} />
-          </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="lastname">lastname</label>
-            <input type="lastname" name="lastname" id="lastname" className="form-control" onChange={this.handleInputChange} />
-          </div>
+      <div className="container mt">
+        <div className="tenantCreate mt" id="tenant-create">
+          <h3 className="text-center">Add Tenant</h3>
+          <form onSubmit={this.handleFormSubmit}>
+            <div className="form-row">
+              <div className="form-group col-md-6">
+                <label htmlFor="firstname">First Name</label>
+                <input name="firstname" id="firstname" className="form-control" onChange={this.handleInputChange} />
+              </div>
+              <div className="form-group col-md-6">
+                <label htmlFor="lastname">Last Name</label>
+                <input type="lastname" name="lastname" id="lastname" className="form-control" onChange={this.handleInputChange} />
+              </div>
+            </div>
+            <div className="form-row">
+              <div className="form-group col-md-6">
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" id="email" className="form-control" onChange={this.handleInputChange} />
+              </div>
+              <div className="form-group col-md-6">
+                <label htmlFor="aptnum">Apartment Number</label>
+                <input name="aptnum" id="aptnum" className="form-control" onChange={this.handleInputChange} />
+              </div>
+            </div>
+            <div className="form-row">
+              <div className="form-group col-md-6">
+                <label htmlFor="phonenum">Phone Number</label>
+                <input name="phonenum" id="phonenum" className="form-control" onChange={this.handleInputChange} />
+              </div>
+            </div>
+            <button type="submit" className="btn btn-primary">Register</button>
+          </form>
         </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" className="form-control" onChange={this.handleInputChange} />
-          </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="aptnum">aptnum</label>
-            <input name="aptnum" id="aptnum" className="form-control" onChange={this.handleInputChange} />
-          </div>
-        </div>
-        <div className="form-group col-md-6">
-          <label htmlFor="phonenum">Phonenum</label>
-          <input name="phonenum" id="phonenum" className="form-control" onChange={this.handleInputChange} />
-        </div>
-        <button type="submit" className="btn btn-primary">Register</button>
-      </form>
+      </div>
     )
   }
 }

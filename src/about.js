@@ -34,29 +34,44 @@ export default class About extends Component {
     return (
       <Fragment>
         <div className="about-us" id="about-us">
-          <h2>About Us</h2>
-          <div className="about-us_who">
-            <Who 
-            name = {this.state.john.name}
-            description = {this.state.john.description}
-            image = {this.state.john.image}
-            />
-            <Who 
-            name = {this.state.kush.name}
-            description = {this.state.kush.description}
-            image = {this.state.kush.image}
-            />
-            <Who 
-            name = {this.state.chai.name}
-            description = {this.state.chai.description}
-            image = {this.state.chai.image}
-            />
-            <Who 
-            name = {this.state.levi.name}
-            description = {this.state.levi.description}
-            image = {this.state.levi.image}
-            />
-          </div>
+          <h3 className="text-center">About Us</h3>
+          
+          <div className="d-flex flex-row">
+            
+            <div className="p-2">
+              <Who 
+              name = {this.state.john.name}
+              description = {this.state.john.description}
+              image = {this.state.john.image}
+              />
+            </div>
+            
+            <div className="p-2">
+              <Who className="p-2"
+              name = {this.state.kush.name}
+              description = {this.state.kush.description}
+              image = {this.state.kush.image}
+              />
+            </div>
+            
+            <div className="p-2">
+              <Who className="p-2"
+              name = {this.state.chai.name}
+              description = {this.state.chai.description}
+              image = {this.state.chai.image}
+              />
+            </div>
+            
+            <div className="p-2">
+              <Who className="p-2"
+              name = {this.state.levi.name}
+              description = {this.state.levi.description}
+              image = {this.state.levi.image}
+              />
+            </div>
+
+          </div>  
+        
         </div>
       </Fragment>
     );

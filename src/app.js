@@ -6,11 +6,12 @@ import Register from './register.js';
 import Login from './login.js';
 import About from './about.js';
 import ScanContainer from './scanContainer';
-
-import api from './helpers/environment.js';
 import AllTen from './allTenants.js'
 import AddTen from './addTenant.js'
 import EditTenant from './editTenant.js';
+import Header from './header.js';
+
+import api from './helpers/environment.js';
 import { PrivateRoute } from './helpers/privateRoute.js';
 
 class App extends Component {
@@ -19,7 +20,8 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      isAuthenticated: false
+      isAuthenticated: false,
+      logout: false
     }
     this.api = api();
   }
@@ -50,19 +52,44 @@ class App extends Component {
     this.loadCurrentUser();
   }
 
+  handleLogout = (event) => {
+    localStorage.removeItem('token');
+    this.setState({
+      currentUser: null,
+      isAuthenticated: false,
+      logout: true
+    });
+  }
+
   componentDidMount = () => {
     this.loadCurrentUser();
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.logout !== this.state.logout) {
+      this.setState({logout: false});
+    }
   }
 
   render() {
     return (
       <Fragment>
+        <Header 
+          isAuthenticated={this.state.isAuthenticated}
+          logout={this.state.logout}
+          handleLogout={this.handleLogout}
+        />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" 
+            render={(props) => <Home isAuthenticated={this.state.isAuthenticated} {...props} />}
+          />
+
           <Route exact path="/register" component={Register} />
+
           <Route exact path="/login"
             render={(props) => <Login onLogin={this.handleLogin} {...props} />}
           />
+
           <Route exact path="/about" component={About} />
 
           {/* Private Routes (require auth) */}
