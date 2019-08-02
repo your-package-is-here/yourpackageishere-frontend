@@ -6,7 +6,6 @@ const home = (props) => (
     <div className="container" id="landing-content">
       <h2>Welcome to YourPackageIsHere</h2>
       <p>Making deliveries that much <span className="special">easier</span>.</p>
-      
       {props.isAuthenticated ? 
         (
           <div>
