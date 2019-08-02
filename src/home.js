@@ -9,7 +9,7 @@ const home = (props) => (
       {!props.isAuthenticated ? 
         (
           <Fragment>
-            <Link className="btn btn-primary" to="/register">Sign up</Link>
+            <Link className="btn btn-dark" to="/register">Sign up</Link>
             <Link className="btn btn-primary" to="/login">Login</Link>
           </Fragment>
         ) :

@@ -47,7 +47,7 @@ class ScanContainer extends Component {
     return (
       <Fragment>
         <div className="container" id="scan-package">
-          <h2>Scan</h2>
+          <h3>Scan</h3>
           <div className="row">
             <div className="col">
               <Scanner handleQRScan={this.handleQRScan} />
@@ -60,7 +60,7 @@ class ScanContainer extends Component {
             </div>
           </div>
           <hr />
-          <h2>Send</h2>
+          <h3>Send</h3>
           {scans.length > 0 ?
             scans.map(scan => 
               <SingleScanResult 

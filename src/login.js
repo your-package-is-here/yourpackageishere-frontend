@@ -59,15 +59,18 @@ class Login extends Component {
       <Fragment>
         <div className="container mt" id="login">
           <form className="form-signin" onSubmit={this.handleFormSubmit}>
-            <i className="fas fa-parachute-box mb-4"></i>
             <h3 className="text-center">Please log in</h3>
-            <div className="form-row login-input">
-              <label htmlFor="usernameOrEmail">Username:</label>
-              <input name="usernameOrEmail" id="usernameOrEmail" className="form-control" required onChange={this.handleInputChange} />
+            <div className="form-group">
+              <div className="form-row login-input">
+                <label htmlFor="usernameOrEmail">Username:</label>
+                <input name="usernameOrEmail" id="usernameOrEmail" className="form-control" required onChange={this.handleInputChange} />
+              </div>
             </div>
-            <div className="form-row login-input">
-              <label htmlFor="password">Password:</label>
-              <input name="password" id="password" className="form-control" type="password" required onChange={this.handleInputChange} />
+            <div className="form-group">
+              <div className="form-row login-input">
+                <label htmlFor="password">Password:</label>
+                <input name="password" id="password" className="form-control" type="password" required onChange={this.handleInputChange} />
+              </div>
             </div>
             <button type="submit" id="login-btn" className="btn btn-primary btn-lg btn-block">Login</button>
           </form>

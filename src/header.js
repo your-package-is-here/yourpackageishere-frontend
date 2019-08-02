@@ -38,10 +38,8 @@ export default (props) => {
                 ) : 
                 (
                   <Fragment>
-                    <li className="nav-item active">
-                      <Link className="nav-link" to="/">Home
-                          <span className="sr-only">(current)</span>
-                      </Link>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/register">Register</Link>

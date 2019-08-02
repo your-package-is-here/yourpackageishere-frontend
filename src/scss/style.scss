@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300|Poppins|Rubik&display=swap');
 @import '~bootstrap/scss/bootstrap.scss';
+
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif !important;
 }
 
-.btn.btn-primary {
-    margin-left: 10px;
-    margin-top: 20px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+}
+
+#landing-page {
+    .btn.btn-primary {
+        margin-left: 20px;
+    }
+}
+
+#all-tenants {
+    .btn.btn-danger {
+        margin-left: 20px;
+    }
 }
 
 #list-group {
@@ -16,7 +32,7 @@ body {
     flex-wrap: wrap !important;
 }
 
-img{
+img {
     width:225px;
     height: 260px;
 }
@@ -31,7 +47,7 @@ img{
     height: 200px;
 }
 
-.about-us{
+.about-us {
     margin: auto;
     width: 70%;
     padding: 10px;
@@ -51,6 +67,7 @@ form {
     margin-left: 8vh;
     min-height: 10vh;
 }
+
 .mt {
     margin-top: 8vh;
 }
@@ -72,11 +89,15 @@ form {
 
 .page-logo {
     font-size: 26px !important;
+
+    svg {
+        margin-right: 10px;
+    }
 }
 
 .tenantEdit, .tenantCreate {
-    width:50%;
-    margin:10vh auto;
+    width: 50%;
+    margin: 10vh auto;
 }
 
 .tenantEdit h3, .tenant h3 {
@@ -123,8 +144,7 @@ form {
     font-weight: 500;
 }
 
-
-.camera-border{
+.camera-border {
   position: relative;
   height: 290px;
   overflow: hidden;
@@ -167,17 +187,19 @@ form {
     background-repeat: repeat;
 }
 
-
 #register, #all-tenants, #login, #scan-package, #about {
   position: relative;
   margin-top: 14vh;
 }
-#register h3, #all-tenants h3, #about h3 {
-    font-family: 'Rubik', sans-serif;
-    margin-bottom: 3vh;
-    font-size:2.5rem;
-    line-height:1;
-    font-weight: 300;
+
+#register, #all-tenants, #about, #tenant-create, #scan-package {
+    h3 {
+        font-family: 'Rubik', sans-serif;
+        margin-bottom: 3vh;
+        font-size:2.5rem;
+        line-height:1;
+        font-weight: 300;
+    }
 }
 
 .form-signin {
@@ -227,14 +249,15 @@ form {
 
 #landing-content h2 {
     font-family: 'Poppins', sans-serif;
-    font-size:2.2rem;
-    line-height:1;
+    font-size: 2.2rem;
+    line-height: 1;
     font-weight: 300;
 }
 
 #landing-content p, #landing-content a {
-    font-size:18px;
-    line-height:1;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 1.2rem;
 }
 
 #landing-content p {
@@ -293,25 +316,25 @@ form {
 }
 
 @media only screen and (min-width : 768px) {
-            #landing-content {
-                margin-left: 0vh;
-                margin-top: 28vh;
-            }
-            .tenantCreate button {
-                margin-left: 38vw;
-            }
-            .form-signin .fa-parachute-box {
-                  margin-left: 18vw;
-            }
+    #landing-content {
+        margin-left: 0vh;
+        margin-top: 28vh;
+    }
+    .tenantCreate button {
+        margin-left: 38vw;
+    }
+    .form-signin .fa-parachute-box {
+        margin-left: 18vw;
+    }
 
-             #email-status, .card {
-                width: 25rem !important;
-                margin:0;
-             }
+    #email-status, .card {
+        width: 25rem !important;
+        margin:0;
+    }
 
-             #scan-results label, #scan-results input {
-                 margin-left: 0vw !important;
-             }
+    #scan-results label, #scan-results input {
+        margin-left: 0vw !important;
+    }
 }
 
 @media only screen and (max-width : 1000px) {
@@ -324,8 +347,8 @@ form {
 
 @media only screen and (min-width : 1000px) {
      #email-status, .card {
-          width: 22rem !important;
-          margin:0;
+        width: 22rem !important;
+        margin:0;
      }
 
      #tenant-header-apt {
@@ -339,4 +362,15 @@ form {
      .tenantEdit button, .tenantCreate button {
          margin-left: 0vw;
      }
+}
+
+// levi's additions
+button.nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    background: none;
+    border: none;
+}
+
+form label {
+    margin-bottom: 0.5rem;
 }
