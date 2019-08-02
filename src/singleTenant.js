@@ -45,7 +45,7 @@ class SingleTenant extends Component {
             <td className="tenant">{this.state.firstname} {this.state.lastname}</td>
             <td>
               <Link class="btn btn-primary" to={`/edit-tenant/${this.state.id}`}>Edit</Link>
-              <a class="btn btn-primary" href="#" data-id={this.state.id} onClick={this.handleDeleteClick}>Delete</a>
+              <button class="btn btn-primary" data-id={this.state.id} onClick={this.handleDeleteClick}>Delete</button>
             </td>
           {/* </tr> */}
           </tr>
