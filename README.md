@@ -20,6 +20,7 @@ their package has been delivered and is safe stored in office.
 
 
 ## Running
+Clone the repository then,
 Reference the [Create React App instructions](./cra-readme.md)
 
 ## Client-side Routes
