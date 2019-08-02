@@ -42,25 +42,26 @@ class AllTen extends Component {
 
     return (
       <Fragment>
-        <h3>Tenants</h3>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">
-            <div className="tenant-parent">
-              <span id="tenant-header-apt">Apt. #</span>
-              <span id="tenant-header-name">Name</span>
-              <span id="tenant-header-action">Action</span>
-            </div>
-          </li>
-
-          {tenants.map(tenant => (
-            <SingleTenant 
-              tenant={tenant} 
-              handleDeleteUpdate={this.handleDeleteUpdate}
-              key={tenant.id} 
-            />
-          ))}
-        </ul>
-        <Link to="/add-tenant">Add Tenant</Link>
+        <h3 class="text-center">Tenants</h3>
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Apt. #</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+          <tbody>
+              {tenants.map(tenant => (
+                <SingleTenant 
+                  tenant={tenant} 
+                  handleDeleteUpdate={this.handleDeleteUpdate}
+                  key={tenant.id} 
+                />
+              ))}
+          </tbody>
+        <Link class="btn btn-primary" to="/add-tenant">Add Tenant</Link>
+        </table>
       </Fragment>
     )
   }

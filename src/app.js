@@ -55,11 +55,16 @@ class App extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" 
+            render={(props) => <Home isAuthenticated={this.state.isAuthenticated} {...props} />}
+          />
+
           <Route exact path="/register" component={Register} />
+
           <Route exact path="/login"
             render={(props) => <Login onLogin={this.handleLogin} {...props} />}
           />
+
           <Route exact path="/about" component={About} />
 
           {/* Private Routes (require auth) */}

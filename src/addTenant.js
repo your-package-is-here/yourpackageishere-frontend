@@ -53,13 +53,14 @@ class AddTen extends Component {
     }
     return (
       <form onSubmit={this.handleFormSubmit}>
+        <h3 class="text-center">Add Tenant</h3>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label htmlFor="firstname">first name</label>
+            <label htmlFor="firstname">First Name</label>
             <input name="firstname" id="firstname" className="form-control" onChange={this.handleInputChange} />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="lastname">lastname</label>
+            <label htmlFor="lastname">Last Name</label>
             <input type="lastname" name="lastname" id="lastname" className="form-control" onChange={this.handleInputChange} />
           </div>
         </div>
@@ -69,12 +70,12 @@ class AddTen extends Component {
             <input type="email" name="email" id="email" className="form-control" onChange={this.handleInputChange} />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="aptnum">aptnum</label>
+            <label htmlFor="aptnum">Apartment Number</label>
             <input name="aptnum" id="aptnum" className="form-control" onChange={this.handleInputChange} />
           </div>
         </div>
         <div className="form-group col-md-6">
-          <label htmlFor="phonenum">Phonenum</label>
+          <label htmlFor="phonenum">Phone Number</label>
           <input name="phonenum" id="phonenum" className="form-control" onChange={this.handleInputChange} />
         </div>
         <button type="submit" className="btn btn-primary">Register</button>

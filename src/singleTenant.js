@@ -39,16 +39,16 @@ class SingleTenant extends Component {
 
   render() {
     return (
-      <li className="list-group-item" key={this.state.id}>
-        <div className="tenant-list-parent">
-          <span className="tenant" id="tenant-apt">{this.state.aptnum}</span>
-          <span className="tenant">{this.state.firstname} {this.state.lastname}</span>
-
-          <Link to={`/edit-tenant/${this.state.id}`}>Edit</Link>
-
-          <a href="#" data-id={this.state.id} onClick={this.handleDeleteClick}>Delete</a>
-        </div>
-      </li>
+          <tr>
+          {/* <tr className="list-group-item" key={this.state.id}> */}
+            <td className="tenant" id="tenant-apt">{this.state.aptnum}</td>
+            <td className="tenant">{this.state.firstname} {this.state.lastname}</td>
+            <td>
+              <Link class="btn btn-primary" to={`/edit-tenant/${this.state.id}`}>Edit</Link>
+              <a class="btn btn-primary" href="#" data-id={this.state.id} onClick={this.handleDeleteClick}>Delete</a>
+            </td>
+          {/* </tr> */}
+          </tr>
     )
   }
 }
