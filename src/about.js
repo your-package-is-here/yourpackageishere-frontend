@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import Who from './who';
+import Header from './header.js';
 
 export default class About extends Component {
 
@@ -33,6 +34,7 @@ export default class About extends Component {
   render() {
     return (
       <Fragment>
+        {/* <Header isAuthenticated={this.props.isAuthenticated} /> */}
         <div className="about-us" id="about-us">
           <h3 class="text-center">About Us</h3>
           

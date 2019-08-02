@@ -26,8 +26,8 @@ export default (props) => {
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a className="dropdown-item" href="/sendemail">Scan Package</a>
-                        <a className="dropdown-item" href="/tenant/add">Add Tenant</a>
-                        <a className="dropdown-item" href="/tenant/all">All Tenants</a>
+                        <a className="dropdown-item" href="/add-tenant">Add Tenant</a>
+                        <a className="dropdown-item" href="/all-tenants">All Tenants</a>
                     </div>
                   </li>
                 ) : 
@@ -49,7 +49,7 @@ export default (props) => {
               }
 
               <li className="nav-item">
-                <a className="nav-link" href="/aboutus">About</a>
+                <a className="nav-link" href="/about">About</a>
               </li>
 
               {props.isAuthenticated ?
