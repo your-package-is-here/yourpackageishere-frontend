@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faParachuteBox } from '@fortawesome/free-solid-svg-icons'
 
 export default (props) => {
 
@@ -7,7 +9,7 @@ export default (props) => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container">
           <a className="navbar-brand page-logo" href="/">
-              <i className="fas fa-parachute-box"></i>
+              <FontAwesomeIcon icon={faParachuteBox} />
               YourPackageIsHere
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
